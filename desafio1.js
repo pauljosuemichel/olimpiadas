@@ -2,7 +2,7 @@
 
 let originalNum = 60;
 let num = 60;
-let primos = [2,3,5,7,11,13];
+let primos = [2,3,5,7,11,13,17,19,23,29,31];
 let sum = 0;
 
 for(let i=0; i<primos.length; i++){
