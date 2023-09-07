@@ -1,4 +1,4 @@
-let N = 100000;
+let N = 30;
 let aux = [];
 let res = 0;
 
