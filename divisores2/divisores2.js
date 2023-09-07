@@ -1,23 +1,39 @@
 let N = 12;
+let N1 = 12;
 let S = N;
+let S1 = N;
 let prim = [2,3,5,7,11,13,17,19];
+let divMin = [];
 
 function agustin(){
     for(let i=0; i<prim.length; i++){
-        if(N < 0 && N%prim[i] == 0){
+        if(N > 0 && N%prim[i] == 0){
             S += N/prim[i];
             N /= prim[i];
+            i = -1
         }
     }
 }
+function divMinSearch(){
+    for(let b=0; b<prim.length; b++){
+        if(N1%prim[b] == 0){
+                divMin.push(prim[b]);
+        }
+    }
+}
+divMinSearch();
 
 function gaston(){
     for(let i=0; i<prim.length; i++){
-        if(N < 0 && N%prim[i] == 0){
-            S += N/prim[i];
-            N /= prim[i];
+        if(N1 > 0 && N1%Math.max(...divMin) == 0){
+            S1 += N1/Math.max(...divMin);
+            N1 /= Math.max(...divMin);
+            divMin = [];
         }
+        divMinSearch()
     }
 }
 
-console.log(agustin(), gaston());
+agustin();
+gaston();
+console.log(S, S1);
