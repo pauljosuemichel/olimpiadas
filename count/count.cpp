@@ -4,8 +4,6 @@
 
 using namespace std;
 
-string str = "hola";
-
 int count(const string &str) {
     if(str.length() == 1){
         return 1;
